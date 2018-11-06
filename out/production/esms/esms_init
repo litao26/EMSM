@@ -1,0 +1,417 @@
+/**  删除xdl_user表 并建立xdl_user表*/
+-- 创建一个xdl_jd用户 并给予权限
+/*create user xdl_jd identified by 123456;
+grant dba to xdl_jd;
+conn xdl_jd/123456;*/
+/*drop table xdl_user cascade constraints;
+create table xdl_user(
+  user_id NUMBER constraint xdl_user_user_id_pk primary key,
+  login_name varchar2(64) constraint xdl_user_login_name_uk unique,
+  nick_name varchar2(64),
+  real_name varchar2(64),
+  grade_id NUMBER,
+  password varchar2(100) constraint xdl_user_password_nn not null,
+  email varchar2(200),
+  province varchar2(100),
+  recommender varchar2(100),
+  sex varchar2(64),
+  birth  Date,
+  location varchar2(100),
+  school varchar2(200),
+  company varchar2(200),
+  card_number varchar2(64),
+  mobile varchar2(64),
+  phone varchar2(64),
+  msn varchar2(64),
+  qq varchar2(64),
+  website varchar2(64),
+  send_address varchar2(100),
+  zipcode varchar2(32),
+  hobby varchar2(64),
+  verify_flag varchar2(64),
+  verify_code varchar2(64),
+  last_login_time Date,
+  last_login_ip varchar2(64),
+  area varchar2(100),
+  head_pic varchar2(50)
+);
+-- 建立xdl_user 表对应的序列 建立之前先删除
+drop sequence xdl_user_id_seq;
+create sequence xdl_user_user_id_seq;*/
+/*
+delete  from xdl_user;*/
+-- 建立分类表 以及对应的序列 建立之前先删除
+/*drop table xdl_category cascade constraints ;
+create table xdl_category(
+  category_id	 NUMBER constraint xdl_category_category_id_pk primary key ,
+  name VARCHAR2(50),
+  turn NUMBER,
+  description	 VARCHAR2(50),
+  parent_id NUMBER
+);
+drop sequence xdl_category_category_id_seq;
+create sequence xdl_category_category_id_seq start with 0 minvalue 0;
+-- 插入几条测试数据
+insert into xdl_category values (xdl_category_category_id_seq.nextval,'图书',xdl_category_category_id_seq.currval,'图书啊',null);
+insert into xdl_category values (xdl_category_category_id_seq.nextval,'小说',xdl_category_category_id_seq.currval,'小说啊',0);
+insert into xdl_category values (xdl_category_category_id_seq.nextval,'文学',xdl_category_category_id_seq.currval,'文学啊',0);
+insert into xdl_category values (xdl_category_category_id_seq.nextval,'少儿',xdl_category_category_id_seq.currval,'少儿啊',0);*/
+/*insert into xdl_category values (xdl_category_category_id_seq.nextval,'中国近代小说',xdl_category_category_id_seq.currval,'中国近代小说啊',1);
+insert into xdl_category values (xdl_category_category_id_seq.nextval,'中国当代小说',xdl_category_category_id_seq.currval,'中国当代小说啊',1);
+insert into xdl_category values (xdl_category_category_id_seq.nextval,'中国武侠小说',xdl_category_category_id_seq.currval,'中国武侠小说啊',1);
+insert into xdl_category values (xdl_category_category_id_seq.nextval,'玄幻小说',xdl_category_category_id_seq.currval,'玄幻小说啊',1);
+insert into xdl_category values (xdl_category_category_id_seq.nextval,'都市小说',xdl_category_category_id_seq.currval,'都市小说啊',1);
+insert into xdl_category values (xdl_category_category_id_seq.nextval,'言情小说',xdl_category_category_id_seq.currval,'言情小说啊',1);
+insert into xdl_category values (xdl_category_category_id_seq.nextval,'中国近代文学',xdl_category_category_id_seq.currval,'中国近代文学啊',2);
+insert into xdl_category values (xdl_category_category_id_seq.nextval,'中国当代文学',xdl_category_category_id_seq.currval,'中国当代文学啊',2);
+insert into xdl_category values (xdl_category_category_id_seq.nextval,'中国武侠文学',xdl_category_category_id_seq.currval,'中国武侠文学啊',2);
+insert into xdl_category values (xdl_category_category_id_seq.nextval,'玄幻文学',xdl_category_category_id_seq.currval,'玄幻文学啊',2);
+insert into xdl_category values (xdl_category_category_id_seq.nextval,'都市文学',xdl_category_category_id_seq.currval,'都市文学啊',2);*/
+-- 建立咨询表 以及对应的序列 建立之前先删除
+/*drop table  xdl_news cascade constraints ;
+create table xdl_news(
+  id NUMBER constraint xdl_news_id_pk primary key ,
+  title VARCHAR2(100),
+  content VARCHAR2(200),
+  release_time Date,
+  sticky CHAR(1)
+);
+drop sequence xdl_news_id_seq;
+create sequence  xdl_news_id_seq start with 0 minvalue 0;*/
+-- 插入几条测试数据
+/*insert  into xdl_news values (xdl_news_id_seq.nextval,'新闻','窗前明月光',SYSDATE,'y');
+insert  into xdl_news values (xdl_news_id_seq.nextval,'新闻','锄禾日当午',SYSDATE,'n');
+insert  into xdl_news values (xdl_news_id_seq.nextval,'新闻','清明上河图',SYSDATE,'n');
+insert  into xdl_news values (xdl_news_id_seq.nextval,'新闻','完全搞不懂',SYSDATE,'n');*/
+/*insert  into xdl_news values (xdl_news_id_seq.nextval,'xinwen','呵呵呵呵呵呵呵呵',SYSDATE,'n');
+insert  into xdl_news values (xdl_news_id_seq.nextval,'xinwen','哈哈哈哈哈哈哈哈哈',SYSDATE,'n');
+insert  into xdl_news values (xdl_news_id_seq.nextval,'xinwen','嘿嘿嘿嘿嘿嘿嘿嘿嘿嘿',SYSDATE,'n');
+insert  into xdl_news values (xdl_news_id_seq.nextval,'xinwen','嘎嘎嘎嘎嘎嘎嘎嘎',SYSDATE,'n');*/
+/*
+delete from xdl_news;
+*/
+
+-- 建立商品表 以及对应的序列 建立之前先删除
+/*drop table xdl_product cascade constraints ;
+create table xdl_product(
+  product_id NUMBER constraint xdl_product_product_id_pk primary key ,
+  name VARCHAR2(50),
+  keywords VARCHAR2(50),
+  add_time DATE,
+  picture VARCHAR2(50),
+  big_picture VARCHAR2(50),
+  fixed_price NUMBER,
+  lower_price NUMBER,
+  description VARCHAR2(100),
+  author VARCHAR2(100),
+  publishing VARCHAR2(100),
+  publish_time Date,
+  isbn	VARCHAR2(100),
+  language	VARCHAR2(100),
+  which_edtion	VARCHAR2(100),
+  total_page	VARCHAR2(100),
+  bind_layout	VARCHAR2(100),
+  book_size	VARCHAR2(100),
+  editor_description	VARCHAR2(100),
+  catalog	VARCHAR2(100),
+  book_summary	VARCHAR2(100),
+  author_summary	VARCHAR2(100),
+  extracts	VARCHAR2(100),
+  print_time	DATE,
+  print_number	NUMBER,
+  paper_type	VARCHAR2(100),
+  print_frequency	VARCHAR2(100)
+);
+drop sequence xdl_product_product_id_seq;
+create sequence  xdl_product_product_id_seq start with 0 minvalue 0;*/
+-- 建立分类 和产品的对应关系表
+
+/*drop  table  xdl_product  cascade  constraints;
+create  table  xdl_product(
+  product_id	NUMBER  constraint  xdl_product_product_id_pk primary key,
+  name	VARCHAR2(50),
+  keywords	VARCHAR2(50),
+  add_time	DATE,
+  picture	VARCHAR2(50),
+  big_picture	VARCHAR2(50),
+  fixed_price	NUMBER,
+  lower_price	NUMBER,
+  description	VARCHAR2(100),
+  author	VARCHAR2(100),
+  publishing	VARCHAR2(100),
+  publish_time	Date,
+  isbn	VARCHAR2(100),
+  language	VARCHAR2(100),
+  which_edtion	VARCHAR2(100),
+  total_page	VARCHAR2(100),
+  bind_layout	VARCHAR2(100),
+  book_size	VARCHAR2(100),
+  editor_description	VARCHAR2(2000),
+  catalog	VARCHAR2(2100),
+  book_summary	VARCHAR2(2100),
+  author_summary	VARCHAR2(2100),
+  extracts	VARCHAR2(2100),
+  print_time	DATE,
+  print_number	NUMBER,
+  paper_type	VARCHAR2(100),
+  print_frequency	VARCHAR2(100)
+);
+drop sequence   xdl_product_product_id_seq;
+create sequence   xdl_product_product_id_seq;
+
+insert  into  xdl_product values(xdl_product_product_id_seq.nextval,
+                                 '让子弹飞','子弹  飞   葛优 姜文 发哥',sysdate-100,'img/book01.jpg',
+                                        'img/big/book01.jpg',100,20,'让子弹飞啊','姜文','兄弟连出版社',sysdate-100,
+  'ISBN_0001','简体中文','第三版','350页','简装','16K',
+  '编辑描述 你猜有没有','第一章之后就没有了','告诉你了就是让子弹飞',
+  '不知道是个演员 还是个导演','吃着火锅唱着歌',sysdate-100,5000,'泥皮','第五次加印');
+insert into xdl_product values(xdl_product_product_id_seq.nextval,
+                               '藏地密码4','藏地 密码 吗 喜马拉雅  ',
+                                       sysdate-100,'img/book02.jpg','img/big/book02.jpg',
+                                       100,20,'藏地密码，去西藏查查密码',
+                                       '河马','北京电子工业出版社',sysdate-50,'ISBNisbn00xx2',
+                                                                   '简体中文','第二版','300页','简装',
+                                                                   '16K','第四部喜马拉雅的诱惑',
+                                                                   '第一章到第五章','听说喜马拉雅是神的住宿，门钥匙在哪里？',
+                                                                   '河马爱神仙','',sysdate-20,
+                               3000,'牛皮','第3次影印'
+);
+
+insert into xdl_product values(xdl_product_product_id_seq.nextval,
+                               '藏地密码5','藏地 密码 哈哈',sysdate-100,'img/book03.jpg',
+                                       'img/big/book03.jpg',120,50,'让藏地来了密码','河马','兄弟连出版社',
+                                       sysdate-100,'ISBN_0102','简体中文','第五版','250页','精装','16K',
+                                                   '长篇小说很棒棒','第一章主人公卒','让藏地带一个密码','编剧和作家',
+                               '遥远的藏地有一个密码叫高伟萎',sysdate-100,2000,'牛皮纸','修正液版');
+insert into xdl_product values(xdl_product_product_id_seq.nextval,'藏地密码6','藏地 啊藏地',
+                                                                          sysdate-100,'img/book04.jpg','img/big/book04.jpg',88,30,'藏地密码密码',
+                                                                          '西藏人民','中国出版社',sysdate-100,'ISBN_0004','繁体中文',
+                                                                                                     '第四版','180页','精装','20k','编辑描述 你猜有没有',
+                                                                                                     '第一章之后就没有了','告诉你了就是藏地密码','不知道是不是一个人',
+                               '哈哈哈哈哈 ',sysdate-100,4800,'牛皮','第四次加印');
+
+insert into xdl_product values(xdl_product_product_id_seq.nextval,'黑道飞云20年','古惑仔 山鸡 陈浩南',
+                                                                            sysdate-100,'img/book05.jpg','img/big/book05.jpg',100,20,'黑道飞云20年啊',
+                                                                            '山鸡','人民出版社',sysdate-100,'ISBN_0005','简体中文',
+                                                                                                     '第三版','500页','精装','16k','编辑描述 你猜有没有',
+                                                                                                     '第一章之后就没有了','告诉你了就是黑道飞云20年','是个古惑仔',
+                               '指导我大哥是谁吗',sysdate-100,5000,'金皮','第六次加印');
+insert into xdl_product values(xdl_product_product_id_seq.nextval,
+                               '风雨哈佛路','风雨 哈佛 路',sysdate-100,'img/book06.jpg',
+                                       'img/big/book06.jpg',100,99,'风雨哈佛路','外国人',
+                                       '总监出版社',sysdate-200,'ISBN_0002','简体中文','第二版','350页',
+                                                           '精装','16k','编辑描述','第一章','风雨哈佛路','外国妞','吃着火锅唱着歌',
+                               sysdate-100,5000,'牛皮纸','第二次加印');
+insert into xdl_product values(xdl_product_product_id_seq.nextval,
+                               '奈良美智','奈良 美 智',sysdate-100,'img/book07.jpg',
+                                      'img/big/book07.jpg',100,99,'奈良美智','日本人',
+                                      '总监出版社',sysdate-200,'ISBN_0003','简体中文','第二版','350页',
+                                                          '精装','16k','编辑描述','第一章','奈良美智','日本r','吃着火锅唱着歌',
+                               sysdate-100,5000,'牛皮纸','第二次加印');
+insert into xdl_product values(xdl_product_product_id_seq.nextval,
+                               '说服力','ppt 说 说服力 会说话',sysdate-100,'img/book08.jpg',
+                                     'img/big/book08.jpg',100,20,'说服力 让你的PPT会说话',
+                                     '张志 刘俊 包翔','人民邮电出版社',sysdate-300,'ISBN_0008',
+                                                                      '简体中文','第一版','520页','精装','16K','编辑描述 让你的PPT会说话',
+                                                                      '第一章说服力了','说服力 ...省略一万字','不知道是一个人写到还是三个人写的..',
+                               '让你的PPT会说话',sysdate-100,10000,'宣纸','第一次精印');
+
+insert into xdl_product values(xdl_product_product_id_seq.nextval,
+                               '再见出租屋','再见 出租屋 屋',sysdate-100,'img/book09.jpg','img/big/book09.jpg',
+                                       100,20,'再见出租屋','李冰','生活?读书?新知三联书店',sysdate-300,'ISBN_0009',
+                                                                                      '简体中文','第五版','400页','精装','16K','编辑描述 这是一本好书',
+                                                                                      '第一章我的北漂生活','北漂生活 ...省略一万字','不知道这是谁..','再见出租屋',
+                               sysdate-100,2500,'竹纸','第六次印');
+
+insert  into  xdl_product values(xdl_product_product_id_seq.nextval,
+                                 '将才','将 大将 人才',sysdate-100,'img/book10.jpg',
+                                      'img/big/book10.jpg',100,20,'人才指南','将才作者本人','兄弟连出版社',sysdate-100,
+  'ISBN_0010','简体中文','第一版','350页','简装','16K',
+  '成为将才，必先掌握一技之长','总共36章','人才成长必备',
+  '著名作家','不想成为将军的士兵不是好士兵',sysdate-100,5000,'牛皮','第三次第一次印刷');
+insert  into  xdl_product values(xdl_product_product_id_seq.nextval,
+                                 '怪诞行为学','怪诞 行为 心理学 行为学',sysdate-100,'img/book11.jpg',
+                                         'img/big/book11.jpg',100,20,'这是一本关于行为和心理方面的著作','高伟伟','兄弟连出版社',sysdate-100,
+  'ISBN_0011','简体中文','第三版','350页','简装','16K',
+  '行为理性息息相关','总共31章','要想学习心理学，必先读此书',
+  '马太效应 从众心理','停车做爱枫林晚，桑叶红于二月花',sysdate-100,5000,'特级纸','第五次加印');
+
+select  * from  xdl_product;
+
+-- 建立分类 和 产品的对应的关系表
+drop  table   xdl_category_product cascade constraints;
+create  table  xdl_category_product(
+  id    number constraint xdl_category_product_id_pk  primary key,
+  category_id   number  constraint  xdl_cp_category_id_fk
+  references xdl_category(category_id),
+  product_id   number, constraint  xdl_cp_product_id_fk  foreign key(product_id)
+references xdl_product(product_id)
+);*/
+/*drop  table  xdl_category cascade constraints;
+create table  xdl_category(
+  category_id	NUMBER constraint xdl_category_category_id_pk primary key,
+  name	VARCHAR2(50),
+  turn	NUMBER,
+  description	VARCHAR2(50),
+  parent_id	NUMBER
+);
+drop  sequence  xdl_category_category_id_seq;
+create  sequence  xdl_category_category_id_seq start with 0 minvalue 0;
+-- 插入几条测试数据
+insert into  XDL_CATEGORY  values(xdl_category_category_id_seq.nextval,
+                                  '图书',xdl_category_category_id_seq.currval,'图书啊',null);
+insert into  XDL_CATEGORY  values(xdl_category_category_id_seq.nextval,
+                                  '小说',xdl_category_category_id_seq.currval,'小说啊',0);
+insert into  XDL_CATEGORY  values(xdl_category_category_id_seq.nextval,
+                                  '文学',xdl_category_category_id_seq.currval,'文学啊',0);
+insert into  XDL_CATEGORY  values(xdl_category_category_id_seq.nextval,
+                                  '少儿',xdl_category_category_id_seq.currval,'少儿啊',0);
+select * from XDL_CATEGORY;
+
+-- 给小说增加 子分类
+insert into  XDL_CATEGORY  values(xdl_category_category_id_seq.nextval,
+                                  '中国当代小说',xdl_category_category_id_seq.currval,'中国当代小说啊',1);
+insert into  XDL_CATEGORY  values(xdl_category_category_id_seq.nextval,
+                                  '中国近代小说',xdl_category_category_id_seq.currval,'中国近代小说啊',1);
+insert into  XDL_CATEGORY  values(xdl_category_category_id_seq.nextval,
+                                  '中国古代小说',xdl_category_category_id_seq.currval,'中国古代小说啊',1);
+insert into  XDL_CATEGORY  values(xdl_category_category_id_seq.nextval,
+                                  '武侠小说',xdl_category_category_id_seq.currval,'武侠小说啊',1);
+insert into  XDL_CATEGORY  values(xdl_category_category_id_seq.nextval,
+                                  '军事小说',xdl_category_category_id_seq.currval,'军事小说啊',1);
+-- 给文学添加子分类
+insert into  XDL_CATEGORY  values(xdl_category_category_id_seq.nextval,
+                                  '中国当代文学',xdl_category_category_id_seq.currval,'中国当代文学啊',2);
+insert into  XDL_CATEGORY  values(xdl_category_category_id_seq.nextval,
+                                  '中国近代文学',xdl_category_category_id_seq.currval,'中国近代文学啊',2);
+insert into  XDL_CATEGORY  values(xdl_category_category_id_seq.nextval,
+                                  '中国古代文学',xdl_category_category_id_seq.currval,'中国古代文学啊',2);
+insert into  XDL_CATEGORY  values(xdl_category_category_id_seq.nextval,
+                                  '武侠文学',xdl_category_category_id_seq.currval,'武侠文学啊',2);*/
+-- 给少儿添加子分类
+/*insert into  XDL_CATEGORY  values(xdl_category_category_id_seq.nextval,
+                                  '铠甲勇士',xdl_category_category_id_seq.currval,'铠甲勇士啊',3);
+insert into  XDL_CATEGORY  values(xdl_category_category_id_seq.nextval,
+                                  '奥特曼',xdl_category_category_id_seq.currval,'奥特曼啊',3);
+insert into  XDL_CATEGORY  values(xdl_category_category_id_seq.nextval,
+                                  '喜洋洋',xdl_category_category_id_seq.currval,'喜洋洋啊',3);
+insert into  XDL_CATEGORY  values(xdl_category_category_id_seq.nextval,
+                                  '猫和老鼠',xdl_category_category_id_seq.currval,'猫和老鼠啊',3);*/
+
+-- 要求建立一个序列  建立之前先删
+/*drop sequence XDL_CATEGORY_product_ID_SEQ;
+create sequence XDL_CATEGORY_product_ID_SEQ;
+--  要求把前5本书 对应到 中国当代小说这个这个分类中
+select * from XDL_CATEGORY;
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,4,1);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,4,2);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,4,3);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,4,4);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,4,5);
+--  要求把后6本书  对应到 中国古代小说这个这个分类中
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,6,6);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,6,7);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,6,8);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,6,9);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,6,10);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,6,11);
+--  要求把偶数id的书  对应到 中国当代文学这个这个分类
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,9,2);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,9,4);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,9,6);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,9,8);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,9,10);
+--  要求把奇数id的书  对应到 中国古代文学这个这个分类中
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,11,1);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,11,3);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,11,5);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,11,7);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,11,9);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,11,11);*/
+-- 要求放四本书到中国近代小说中
+/*insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,5,1);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,5,6);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,5,3);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,5,7);
+-- 要求放5本书到武侠小说中
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,7,2);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,7,5);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,7,1);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,7,4);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,7,6);
+-- 要求放四本书到中国近代文学中
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,10,8);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,10,3);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,10,2);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,10,4);
+-- 要求放5本书到武侠文学中
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,12,7);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,12,4);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,12,3);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,12,1);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,12,10);*/
+-- 要求放5本书到军事小说中
+/*insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,8,10);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,8,9);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,8,11);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,8,3);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,8,1);*/
+
+/*-- 要求放5本书放到铠甲勇士中
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,20,10);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,20,6);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,20,3);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,20,7);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,20,8);
+-- 要求放5本书放到奥特曼中
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,21,11);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,21,2);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,21,3);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,21,4);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,21,5);
+-- 要求放5本书放到喜洋洋中
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,22,9);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,22,5);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,22,8);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,22,2);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,22,1);
+-- 要求放5本书放到猫和老鼠中
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,23,7);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,23,8);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,23,1);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,23,10);
+insert into XDL_CATEGORY_PRODUCT values (XDL_CATEGORY_product_ID_SEQ.nextval,23,9);*/
+/*
+-- 根据一个分类的编号 如分类的编号是4 来获取这个分类对应的产品信息
+select p.* from  XDL_CATEGORY_PRODUCT cp ,XDL_PRODUCT p
+where p.PRODUCT_ID=cp.PRODUCT_ID and cp.CATEGORY_ID=4;*/
+-- 创建一个地址表 创建之前先删除
+/*
+drop  table  xdl_receive_address cascade constraints;
+create table xdl_receive_address (
+  reveive_address_id NUMBER constraint xdl_xdl_receive_address_id_pk primary key,
+  user_id            NUMBER constraint  xdl_user_user_id_fk not null,
+  receive_name       VARCHAR2(50),
+  province           VARCHAR2(50),
+  address            VARCHAR2(50),
+  zipcode            VARCHAR2(50),
+  mobile             VARCHAR2(50),
+  telephone          VARCHAR2(50),
+  email              VARCHAR2(50),
+  area               VARCHAR2(50)
+);
+-- 创建序列 创建之前先删除
+drop sequence xdl_receive_address_id_SEQ;
+create sequence xdl_receive_address_id_SEQ;*/
+-- 创建收藏表 创建之前先删除
+drop   table xdl_interest  cascade constraints;
+create table xdl_interest(
+  id	NUMBER constraint xdl_interest_id_pk primary key,
+  user_id	NUMBER not null,
+  product_id	NUMBER not null,
+  collect_time TIMESTAMP,
+  bak	VARCHAR2(200)
+);
+-- 创建收藏的序列 创建之前先删除
+drop sequence xdl_interest_interest_id_seq;
+create sequence xdl_interest_interest_id_seq;

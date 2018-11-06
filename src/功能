@@ -1,0 +1,156 @@
+1.实现注册功能(完成)ajax  (OK)                                                                          4分
+    1.1 建立一张用户表 和对应的序列 建立之前先删除 xdl_user
+    1.2 根据表设计实体类 XdlUser
+    1.3 设计一个DAO 接口 XdlUserDAO
+        int  insertXdlUser(XdlUser user);
+    1.4 写一个DAO 的实现类 利用DbcpUtil 工具类 结合JDBC 编程的五步完成
+    1.5 编写一个Service 类 XdlUserService
+    1.6 使用DAO 工厂来解决 服务和DAO层 耦合问题 ------ 测试   M层
+    1.7 研究 register.jsp 可以把注册数据传递给servlet ------ V层
+    1.8 编写一个Servlet 使用M层完成注册功能 注册成功 -----C层
+  注册失败 跳转回注册页面
+ 2.实现登陆功能(完成)        (OK)                                                                       3分
+    1.1 设计一个DAO接口 XdlUserDAO
+        int selectXdlUser(XdlUser user);
+    1.2 写一个实现类 利用DbUtil 工具类 结合 JDBC 编程五步完成
+    1.3 写一个Service
+    1.4 使用DAO 工厂来解决 服务和DAO层 耦合问题 ------ 测试   M层
+    1.5 研究 login.jsp 可以把注册数据传递给servlet ------ V层
+    1.6 编写一个Servlet 使用M层完成登陆功能 登陆成功 -----C层
+  3.修改密码(完成)             (OK)                                                                   3分
+    1.1 设计一个DAO接口 XdlUserDAO
+        int updateXdlUser(XdlUser user);
+    1.2 写一个实现类 利用DbUtil 工具类 结合 JDBC 编程五步完成
+    1.3 写一个Service
+    1.4 使用DAO 工厂来解决 服务和DAO层 耦合问题 ------ 测试   M层
+    1.5 研究 changepassword.jsp 可以把注册数据传递给servlet ------ V层
+    1.6 编写一个Servlet 使用M层完成修改功能 修改成功 -----C层
+  4.图书分类列表的显示 根据父分类id 查询对应的直接子分类列表ajax(完成)  (OK)                            4分
+    并把列表的数据显示 book.jsp 对应的位置. 写一个servlet 默认传入父分类 id 是 0
+    获取对应的子分类列表
+    1.1 图书分类列表的表分析
+    1.2 根据表设计实体类
+    1.3 设计一个DAO接口 XdlCategoryDAO
+        定义一个方法 可以根据父分类id 获取对应的直接子分类列表
+    1.4 写一个实现类XdlCategoryDAOImp
+    1.5 写一个service
+    1.6 使用DAO 工厂来解决 服务和DAO层 耦合问题 ------ 测试   M层
+    1.7 研究 book.jsp 可以把注册数据传递给servlet ------ V层
+    1.8 编写一个Servlet 使用M层完成添加功能 添加成功 -----C层
+  5.图书咨询ajax(完成)    (OK)                                                                        4分
+      1.1 图书咨询列表的表分析
+      1.2 根据表设计实体类
+      1.3 设计一个DAO接口
+          定义一个方法 可以根据父分类id 获取对应的直接子分类列表
+      1.4 写一个实现类XdlCategoryDAOImp
+      1.5 写一个service
+      1.6 使用DAO 工厂来解决 服务和DAO层 耦合问题 ------ 测试   M层
+      1.7 研究 book.jsp 可以把注册数据传递给servlet ------ V层
+      1.8 编写一个Servlet 使用M层完成添加功能 添加成功 -----C层
+  6.头部用户名显示 (OK)                                                                                 1分
+  7.用户注册成功的跳转页面  (OK)                                                                        1分
+  8.判断两次密码是否一致     (OK)                                                                       1分
+  9.修改昵称(完成)               (OK)                                                                   3分
+      1.1 设计一个DAO接口 XdlUserDAO
+          int updateXdlNickname(XdlUser user);
+      1.2 写一个实现类 利用DbUtil 工具类 结合 JDBC 编程五步完成
+      1.3 写一个Service
+      1.4 使用DAO 工厂来解决 服务和DAO层 耦合问题 ------ 测试   M层
+      1.5 研究 userInfo.jsp.jsp 可以把注册数据传递给servlet ------ V层
+      1.6 编写一个Servlet 使用M层完成修改功能 修改成功 -----C层
+   10.根据分类编号 按照销量 降序 一页显示三条 显示第一页数据(完成)        (OK)                             3分
+       1.1 建立表 序列 和对应的测试数据
+       1.2 建立实体类
+       1.3 建立DAO接口
+       1.4 建立DAO的实现类
+       1.5 建立DAO 的工厂类
+       1.6 编写一个service类 根据 参数获取对应的产品列表 ------ 测试   M层
+       1.7 编写一个Servlet 使用M层 或 -----C层
+       1.8 研究 userInfo.jsp.jsp 可以把注册数据传递给servlet ------ V层
+   11. 修改真实姓名(完成)(OK)
+      1.1 设计一个DAO接口 XdlUserDAO
+           int updateXdlNickname(XdlUser user);
+      1.2 写一个实现类 利用DbUtil 工具类 结合 JDBC 编程五步完成
+      1.3 写一个Service
+      1.4 使用DAO 工厂来解决 服务和DAO层 耦合问题 ------ 测试   M层
+      1.5 研究 userInfo.jsp.jsp 可以把注册数据传递给servlet ------ V层
+      1.6 编写一个Servlet 使用M层完成修改功能 修改成功 -----C层
+   12. 修改个人信息(完成)    (OK)                                                                           3分
+         1.1 设计一个DAO接口 XdlUserDAO
+              int updateXdlNickname(XdlUser user);
+         1.2 写一个实现类 利用DbUtil 工具类 结合 JDBC 编程五步完成
+         1.3 写一个Service
+         1.4 使用DAO 工厂来解决 服务和DAO层 耦合问题 ------ 测试   M层
+         1.5 研究 userInfo.jsp.jsp 可以把注册数据传递给servlet ------ V层
+         1.6 编写一个Servlet 使用M层完成修改功能 修改成功 -----C层
+   13.修改联系信息(完成)   (OK)                                                                             3分
+            1.1 设计一个DAO接口 XdlUserDAO
+                 int updateXdlNickname(XdlUser user);
+            1.2 写一个实现类 利用DbUtil 工具类 结合 JDBC 编程五步完成
+            1.3 写一个Service
+            1.4 使用DAO 工厂来解决 服务和DAO层 耦合问题 ------ 测试   M层
+            1.5 研究 userInfo.jsp.jsp 可以把注册数据传递给servlet ------ V层
+            1.6 编写一个Servlet 使用M层完成修改功能 修改成功 -----C层
+    14. 修改兴趣爱好(完成)             (OK)                                                                 3分
+            1.1 设计一个DAO接口 XdlUserDAO
+                 int updateXdlNickname(XdlUser user);
+            1.2 写一个实现类 利用DbUtil 工具类 结合 JDBC 编程五步完成
+            1.3 写一个Service
+            1.4 使用DAO 工厂来解决 服务和DAO层 耦合问题 ------ 测试   M层
+            1.5 研究 userInfo.jsp.jsp 可以把注册数据传递给servlet ------ V层
+            1.6 编写一个Servlet 使用M层完成修改功能 修改成功 -----C层
+    15. 价格排序(完成)             (OK)                                                                        3分
+    16. 上架时间排序(完成)           (OK)                                                                     3分
+    17. 出版时间排序(完成)           (OK)                                                                      3分
+    18.折扣排序(完成)                   (OK)                                                                   3分
+    18. 商品出版社AJAX(完成) (OK)                                                                              4分
+          1.1 图书咨询列表的表分析
+          1.2 根据表设计实体类
+          1.3 设计一个DAO接口
+              定义一个方法 可以根据父分类id 获取对应的直接子分类列表
+          1.4 写一个实现类XdlCategoryDAOImp
+          1.5 写一个service
+          1.6 使用DAO 工厂来解决 服务和DAO层 耦合问题 ------ 测试   M层
+          1.7 研究 book.jsp 可以把注册数据传递给servlet ------ V层
+          1.8 编写一个Servlet 使用M层完成添加功能 添加成功 -----C层
+    19. 浏览同级分类(完成)       (Ok)                                                                         3分
+    20. 购买逻辑的实现(完成)   (OK)                                                                           3分
+    21.显示 图片以及价格(完成)    (OK)                                                                        1分
+    22.修改头像AJAX  (完成)     (OK)                                                                          4分
+    23.浏览同级子分类  (完成)  (OK)                                                                           3分
+    24.新书推荐     (完成)    (Ok)                                                                            3分
+    25.购物车展示   (完成)        (OK)                                                                        3分
+    26.商品的增加AJAX(完成)    (OK)                                                                           4分
+    27.商品删除AJAX(完成)         (OK)                                                                        4分
+    28.清空购物车(完成)              (OK)                                                                     4分
+    29.寄存(完成)                       (OK)                                                                  3分
+    30.重新购买(完成)                   (OK)                                                                  6分
+    31.收货地址管理(完成)   (OK)                                                                              3分
+        1.1 地址表分析
+        1.2 根据表来设计实体类
+        1.3 设计一个接口DAO
+        1.4 写一个实现类
+        1.5 写一个service
+        1.6 使用DAO工厂解决耦合问题 ----- M层
+        1.7 研究dzgl.jsp 把注册数据传递给servlet ----V层
+        1.8 编写一个Servlet 使用M层完成添加功能 添加成功 -------C层
+     32.删除地址(完成)    (OK)                                                                                3分
+     33.修改地址(完成)   (OK)                                                                                 3分
+     34.用户收藏AJAX(完成)    (OK)                                                                            4分
+        1.1 收藏表分析
+        1.2 根据表来设计实体类
+        1.3 设计一个接口DAO
+        1.4 写一个实现类
+        1.5 写一个service
+        1.6 使用DAO工厂解决耦合问题 ----- M层
+        1.7 研究dzgl.jsp 把注册数据传递给servlet ----V层
+        1.8 编写一个Servlet 使用M层完成添加功能 添加成功 -------C层
+      35.购物车页面的用户收藏(完成)       (OK)                                                                      3分
+      36.从购物车界面中的收藏添加到购物车(完成)(OK)                                                                  3分
+      37.取消收藏(完成)                         (Ok)                                                                3分
+      38.收藏页面显示(完成)           (OK)                                                                          3分
+      39.取消收藏(完成)                  (OK)                                                                      3分
+      40.加入购物车(完成)                   (OK)                                                                    3分
+      41.提交信息商品清单(完成)                                                                                  3分
+      41.提交信息商品结算(完成)                                                                                  3分
+      42.` (完成)                                                                                   3分
